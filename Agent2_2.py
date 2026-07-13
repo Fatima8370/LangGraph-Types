@@ -49,6 +49,8 @@ while user_input.lower() != "exit":
 
 # problem -> temporary memory
 
+# you're also supposed to restore the conversation too
+
 ''' the code below will allow us to store the conversation history in a text file
     so when the conversation finishes, the History is preserved'''
 
@@ -62,3 +64,10 @@ with open("conversation_history.txt", "w") as f:
 
 
 print ("\n conversation stored in text file")
+
+
+# yet another problem
+# as the we keep storing the the history, it gets lengthy
+# this uses up input tokens and will cost alot
+# we can add a condition if human texts exceeds 5, remove the first 3 messages
+# this saves costs 
