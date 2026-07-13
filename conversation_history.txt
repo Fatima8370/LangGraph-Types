@@ -1,3 +1,0 @@
-Human: hi, whats my name
-AI: I’m not sure—could you tell me what your name is?
-End of Conversation
