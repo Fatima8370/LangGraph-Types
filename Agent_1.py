@@ -6,13 +6,12 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, START,END
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 class AgentState(TypedDict):
     messages : List [HumanMessage]
     
-llm = ChatOpenAI(model = "gpt-4o")
+llm = ChatOpenAI(model = "o4-mini") # pik any model you want
 
 def process (state : AgentState) -> AgentState:
     response = llm.invoke(state["messages"])
@@ -33,6 +32,6 @@ while user_input.lower() != "exit":
     user_input = input("Enter: ")
     
 
-
+# currently this agent has no memory unit
 
     
