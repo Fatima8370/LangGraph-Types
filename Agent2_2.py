@@ -48,3 +48,17 @@ while user_input.lower() != "exit":
 # the history for the previous conversation will be gone
 
 # problem -> temporary memory
+
+''' the code below will allow us to store the conversation history in a text file
+    so when the conversation finishes, the History is preserved'''
+
+with open("conversation_history.txt", "w") as f:
+    for message in conversation_history:
+        if isinstance(message, HumanMessage):
+            f.write(f"Human: {message.content}\n")
+        elif isinstance(message, AIMessage):
+            f.write(f"AI: {message.content}\n")
+    f.write("End of Conversation\n")
+
+
+print ("\n conversation stored in text file")
